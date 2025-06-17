@@ -48,3 +48,31 @@ To design a Python-based command-line system that can **classify, detect, segmen
 
    ```bash
    cd path\to\Junior_Design_Project
+
+3. **Run a command:**  
+   
+   ```bash
+   python main.py --task classify --input test.jpg
+
+# 📁 Folder Structure
+```bash
+Junior_Design_Project/
+│
+├── main.py                # CLI entry point
+├── README.md              # Project documentation
+├── tasks/                 # Folder for individual task modules
+│   ├── __init__.py
+│   ├── classifier.py
+│   ├── segmenter.py
+│   ├── detector.py
+│   ├── size_estimator.py
+│   ├── digit_recognizer.py
+│   ├── scanner.py
+│   ├── omr_grader.py
+│   ├── ball_tracker.py
+│   ├── drowsiness.py
+│   └── fracture_detector.py
+
+
+
+
