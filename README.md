@@ -21,22 +21,6 @@ To design a Python-based command-line system that can **classify, detect, segmen
 
 ---
 
-## ⚙️ Supported Tasks
-
-| Task Command       | Description |
-|--------------------|-------------|
-| `classify`         | Predict object class (e.g., dog/cat, traffic sign) |
-| `segment`          | Label each pixel to identify regions/objects |
-| `detect`           | Detect and locate objects using bounding boxes |
-| `size`             | Estimate the real-world size of an object |
-| `digit`            | Recognize handwritten digits and characters |
-| `scan`             | Convert photos of documents to scanned format |
-| `omr`              | Grade OMR sheets by detecting filled bubbles |
-| `track`            | Track a ball’s motion across video frames |
-| `drowsy`           | Detect driver fatigue using eye aspect ratio |
-| `fracture`         | Identify bone fractures in medical X-ray images |
-
----
 
 ## 🚀 How to Run
 
@@ -49,19 +33,18 @@ To design a Python-based command-line system that can **classify, detect, segmen
    ```bash
    cd path\to\Junior_Design_Project
 
-3. **Run a command:**  
+3. **Example to run a command:**  
    
    ```bash
-   python main.py --task classify --input test.jpg
+   python codeP\main.py --dataset exampledata --model classifier --otherOptions binary
 
 # 📁 Folder Structure
 ```bash
 Junior_Design_Project/
 │
-├── main.py                # CLI entry point
 ├── README.md              # Project documentation
-├── tasks/                 # Folder for individual task modules
-│   ├── __init__.py
+├── codeP/                 # Folder for all Python Codes
+│   ├── main.py
 │   ├── classifier.py
 │   ├── segmenter.py
 │   ├── detector.py
@@ -72,6 +55,10 @@ Junior_Design_Project/
 │   ├── ball_tracker.py
 │   ├── drowsiness.py
 │   └── fracture_detector.py
+├── codeB/                 # Folder for bash commands
+│   ├── bash_command.sh
+├── DATA
+│   ├── exampledata
 
 
 
