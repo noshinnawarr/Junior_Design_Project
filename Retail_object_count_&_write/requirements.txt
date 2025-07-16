@@ -1,0 +1,7 @@
+#opencv-python
+!pip install ultralytics opencv-python
+
+#ultralytics 
+from ultralytics import YOLO
+# Load the improved YOLOv8 small model
+model = YOLO("yolov8s.pt") 
