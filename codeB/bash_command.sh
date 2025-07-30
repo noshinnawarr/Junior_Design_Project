@@ -1,9 +1,11 @@
-python codeP\main.py --dataset exampledata --model classifier --otherOptions binary
+# Document Scanner
+python codeP\main.py --dataset scanner --model scanner --otherOption testing/receipt.jpg
 
-cd "C:\Users\HP\Documents\Junior_Design_Project"
+# Human Face Detector
+python codeP\main.py --dataset detector --model detector --otherOption testing/hellothree.jpg
 
-python codeP\main.py --dataset exampledata --model scanner --otherOption "C:\Users\HP\Documents\Junior_Design_Project\codeP\images\receipt.jpg"
+# Size estimator
+python codeP\main.py --dataset size_estimator --model size_estimator --otherOption testing/example_03.png
 
-python codeP\main.py --dataset exampledata --model detector --otherOption "C:\Users\HP\Documents\Junior_Design_Project\codeP\images\iron_chic.jpg"
-
-python codeP\main.py --dataset exampledata --model size_estimator --otherOption "C:\Users\HP\Documents\Junior_Design_Project\codeP\images\example_03.png"
+#Color detection
+python codeP\main.py --dataset color_detection --model color_detection --otherOption testing/colorpic.jpg

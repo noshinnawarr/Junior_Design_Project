@@ -10,7 +10,7 @@ def main():
 
     args = parser.parse_args()
 
-    dataset_path = os.path.join("..", "DATA", args.dataset)
+    dataset_path = os.path.join("DATA", args.dataset)
     model_name = args.model.lower()
 
     print("\nWelcome to our Image Classification and Identification Project")
@@ -30,8 +30,8 @@ def main():
         import scanner; scanner.run(dataset_path, args.otherOptions)
     elif model_name == 'omr':
         import omr_grader; omr_grader.run(dataset_path, args.otherOptions)
-    elif model_name == 'ball_tracker':
-        import ball_tracker; ball_tracker.run(dataset_path, args.otherOptions)
+    elif model_name == 'color_detection':
+        import color_detection; color_detection.run(dataset_path, args.otherOptions)
     elif model_name == 'drowsiness':
         import drowsiness; drowsiness.run(dataset_path, args.otherOptions)
     elif model_name == 'fracture':

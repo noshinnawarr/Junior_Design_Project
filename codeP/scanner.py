@@ -65,3 +65,5 @@ def run(dataset_path, image_relative_path):
     cv2.imshow("Scanned", imutils.resize(warped, height=650))
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
+    

@@ -9,29 +9,34 @@ import os
 def midpoint(ptA, ptB):
     return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
 
-def run(dataset_path, otherOptions):
+def run(dataset_path, image_relative_path):
     """
-    dataset_path: str, unused here but passed by main.py
-    otherOptions: str, expected format "image_path,width"
-                  width = real-world width of reference object (e.g. 1.0 inch)
-                  Example: "C:\\path\\to\\image.png,1.0"
+    dataset_path: str, path to dataset folder (e.g., DATA/size_estimator)
+    image_relative_path: str, format: 'testing/image.jpg,1.0' OR just 'testing/image.jpg'
     """
-    # Parse otherOptions
-    if ',' in otherOptions:
-        image_path, width_str = otherOptions.split(',', 1)
+
+    # === ✅ Parse the image path and optional width from image_relative_path
+    if ',' in image_relative_path:
+        image_path_part, width_str = image_relative_path.split(',', 1)
         try:
             reference_width = float(width_str)
         except ValueError:
             print(f"❌ Invalid width value: {width_str}. Using default 1.0 inch.")
             reference_width = 1.0
     else:
-        image_path = otherOptions
-        reference_width = 1.0  # default if width not provided
+        image_path_part = image_relative_path
+        reference_width = 1.0
 
+    # === ✅ Build full absolute image path
+    image_path = os.path.abspath(os.path.join(dataset_path, image_path_part))
+    print(f"🔍 Checking image at: {image_path}")
+
+    # === ✅ Check if file exists
     if not os.path.exists(image_path):
-        print("❌ Image file not found:", image_path)
+        print("❌ Image file not found:", image_path_part)
         return
 
+    # === Load and process image (rest of your original code below)
     image = cv2.imread(image_path)
     if image is None:
         print("❌ Failed to load the image.")

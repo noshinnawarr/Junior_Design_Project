@@ -3,17 +3,13 @@ import numpy as np
 import cv2
 import sys
 
-# Hardcoded prototxt and model paths
+
 prototxt_path = r"C:\Users\HP\Documents\Junior_Design_Project\codeP\model\deploy.prototxt.txt"
 model_path = r"C:\Users\HP\Documents\Junior_Design_Project\codeP\model\res10_300x300_ssd_iter_140000.caffemodel"
 confidence_threshold = 0.5
 
-def run(dataset_path, otherOptions):
-    """
-    dataset_path: str, not used here but passed by main.py
-    otherOptions: str, path to input image
-    """
-    image_path = otherOptions
+def run(dataset_path, image_relative_path):
+    image_path = os.path.join(dataset_path, image_relative_path)
 
     # Check if files exist
     for path, name in [(image_path, "Image"), (prototxt_path, "Prototxt"), (model_path, "Model")]:
