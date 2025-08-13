@@ -20,7 +20,7 @@ def download_data(labels_map, color_palette, n_images, batch_size, split, task, 
             for img in batch_images:
                 img.export(output_folder, labels_map, color_palette)
     except Exception as ex:
-        print(f"Error downloading dataset: {ex}")
+        print(f"Error downloading dataset happened: {ex}")
 
 labels_map = {
     "airplane": 1,
